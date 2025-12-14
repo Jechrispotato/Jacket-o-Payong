@@ -1,0 +1,11 @@
+{
+  "name": "you/weather-clothing-suggestion",
+  "description": "Weather-based jacket & umbrella suggestion using php-ml",
+  "require": {
+    "php": ">=7.4",
+    "php-ai/php-ml": "^0.10"
+  },
+  "autoload": {
+    "psr-4": { "App\\": "src/" }
+  }
+}
