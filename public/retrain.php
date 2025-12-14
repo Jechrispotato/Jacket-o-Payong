@@ -66,6 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </label>
     <button type="submit">Upload & Retrain</button>
   </form>
-  <p><a href="index.php">Back to front page</a></p>
+  <p><a href="/index.php">Back to front page</a></p>
 </body>
 </html>

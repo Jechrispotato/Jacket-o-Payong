@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $location = sanitize($_POST['location'] ?? '');
 
         if (empty($location)) {
-            header('Location: error.php?message=' . urlencode('Please enter a city name.'));
+            header('Location: /public/error.php?message=' . urlencode('Please enter a city name.'));
             exit;
         } else {
             // Initialize weather service
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $apiData = $weatherService->getWeatherData($location);
 
             if (isset($apiData['error'])) {
-                header('Location: error.php?message=' . urlencode($apiData['error']));
+                header('Location: /public/error.php?message=' . urlencode($apiData['error']));
                 exit;
             } else {
                 // Update location with actual name from API
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $weatherData = $weatherService->formatForModel($apiData);
 
                 if (!$modelsExist) {
-                    header('Location: error.php?message=' . urlencode('Models not found. Please run training (php src/train.php).'));
+                    header('Location: /public/error.php?message=' . urlencode('Models not found. Please run training (php src/train.php).'));
                     exit;
                 } else {
                     // Get daily forecast data for predictions (7 days)
@@ -111,12 +111,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     } catch (Exception $e) {
-        header('Location: error.php?message=' . urlencode('Prediction failed: ' . $e->getMessage()));
+        header('Location: /public/error.php?message=' . urlencode('Prediction failed: ' . $e->getMessage()));
         exit;
     }
 } else {
     // If no POST data, redirect to index
-    header('Location: index.php');
+    header('Location: /index.php');
     exit;
 }
 ?>
@@ -244,7 +244,7 @@ body {
 }
 
 .weather-background.sunny {
-    background-image: url("../assets/hero2.png");
+    background-image: url("/assets/hero2.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -252,7 +252,7 @@ body {
 }
 
 .weather-background.cloudy {
-    background-image: url("../assets/hero3.png");
+    background-image: url("/assets/hero3.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -260,7 +260,7 @@ body {
 }
 
 .weather-background.rainy {
-    background-image: url("../assets/hero5.png");
+    background-image: url("/assets/hero5.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -268,7 +268,7 @@ body {
 }
 
 .weather-background.snowy {
-    background-image: url("../assets/hero1.png");
+    background-image: url("/assets/hero1.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1062,7 +1062,7 @@ body {
             <div class="main-layout">
                 <!-- Left Panel - Hero Weather Display -->
                 <div class="left-panel">
-                    <a href="index.php"><img src="/assets/umaaraw.png" alt="Loading"></a>
+                    <a href="/index.php"><img src="/assets/umaaraw.png" alt="Loading"></a>
 
                     <div class="main-weather-display">
                         <div class="temperature-display">
@@ -1126,7 +1126,7 @@ body {
                                         <i class="fas fa-exclamation-triangle"></i>
                                         <span><?php echo $error; ?></span>
                                     </div>
-                                    <a href="index.php" class="error-button">
+                                    <a href="/index.php" class="error-button">
                                         <i class="fas fa-home"></i> Go Home
                                     </a>
                                 </div>

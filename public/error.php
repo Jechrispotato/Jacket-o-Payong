@@ -155,7 +155,7 @@ $error = $_GET['message'] ?? 'Something went wrong. Please try again.';
         </p>
 
         <div class="error-button-group">
-            <a href="index.php" class="error-button primary">
+            <a href="/index.php" class="error-button primary">
                 <i class="fas fa-home"></i> Go Home
             </a>
         </div>
