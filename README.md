@@ -1,5 +1,12 @@
 # Weather-Based Clothing Suggestion (PHP + php-ml)
 
+
+## Requirements
+- Youtube Link: https://youtu.be/Nfjs_hEl7ZA
+- Presentation Link: https://www.canva.com/design/DAG7flvqu6U/EtGPr6IpR5Leisp1_3zHXQ/view?utm_content=DAG7flvqu6U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7d27f2b125
+- Live Web Application via InfinityFree: https://jacketopayong.xo.je
+
+  
 ## Requirements
 - PHP >= 7.4
 - Composer
